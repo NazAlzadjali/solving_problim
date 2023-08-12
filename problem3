@@ -1,0 +1,26 @@
+def find_pair_with_sum(arr, target_sum):
+    num_set = set() 
+   
+    for num in arr:
+        complement = target_sum - num
+        if complement in num_set:
+            return num, complement
+        num_set.add(num)
+   
+    return None  
+
+if __name__ == "__main__":
+    try:
+        input_numbers = input("Enter a list of numbers separated by spaces: ")
+        numbers = list(map(int, input_numbers.split()))
+       
+        target_sum = int(input("Enter the target sum: "))
+       
+        pair = find_pair_with_sum(numbers, target_sum)
+       
+        if pair:
+            print(f"A pair with sum {target_sum} is: {pair[0]} and {pair[1]}")
+        else:
+            print("No such pair found.")
+    except ValueError:
+        print("Invalid input. Please enter valid numbers.")
