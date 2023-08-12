@@ -1,0 +1,15 @@
+def identify_gender(username):
+    if len(username) == 1:
+        return "boy"
+    else:
+        return "girl"
+
+if __name__ == "__main__":
+    username1 = "A" 
+    username2 = "Alice" 
+
+    gender1 = identify_gender(username1)
+    gender2 = identify_gender(username2)
+
+    print(f"{username1} is a {gender1}")
+    print(f"{username2} is a {gender2}"
