@@ -1,0 +1,37 @@
+#include <iostream>
+#include <algorithm> // for std::sort
+
+using namespace std;
+
+
+bool check_elements_in_range(int arr[], int n, int A, int B) {
+	if (A > B) {
+		return false; // invalid range
+	}
+
+	for (int i = A; i <= B; i++) {
+		bool found = false;
+		for (int j = 0; j < n; j++) {
+			if (arr[j] == i) {
+				found = true;
+				break;
+			}
+		}
+		if (!found) {
+			return false; // element not found in array
+		}
+	}
+	return true; // all elements in range found in array
+}
+
+int main() {
+	int arr[] = {1, 4, 5, 2, 7, 8, 3};
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int A = 2, B = 5;
+	if (check_elements_in_range(arr, n, A, B)) {
+		cout << "Yes" << endl;
+	} else {
+		cout << "No" << endl;
+	}
+	return 0;
+}
