@@ -1,0 +1,40 @@
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int countSubstring(string& S, int N)
+{
+
+	int ans=0,lower=0,upper=0;
+
+
+	for(int i=0;i<S.length();i++){
+	
+	upper=0;
+	lower=0;
+	
+	for(int j=i;j<S.length();j++){
+	
+		if(isupper(S[j]))upper++;
+		
+		else lower++;
+		
+		if(upper==lower)ans++;
+		
+	}
+	
+	}
+	return ans;
+}
+
+
+int main()
+{
+	string S = "gEEk";
+	cout << countSubstring(S, S.length());
+
+	return 0;
+}
+//code contributed by shubhamrajput6156
